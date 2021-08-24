@@ -1,0 +1,6 @@
+
+a =4
+b =4
+hyp = (a**2 + b**2)
+root_hyp = hyp**0.5
+print("c= {hyp}")
