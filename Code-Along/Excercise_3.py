@@ -8,6 +8,6 @@ fp = 2
 fn = 11
 
 # calulate accuracy in %
-accuracy = 100*((tp +tn) / (tp +tn +fp +fn))
+accuracy = ((tp +tn) / (tp +tn +fp +fn))
 
-print(f"The accuracy of the model is: {accuracy:.1f} %")
+print(f"The accuracy of the model is: {accuracy:.3f} ")

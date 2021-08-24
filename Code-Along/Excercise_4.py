@@ -8,5 +8,6 @@ delta_y = 1 - 4
 delta_x = 0 - 4
 
 k = delta_y/delta_x
+# m = 1 
 
-print(f"slope k = {k}")
+print(f"k = {k}, m = 1 and the equation is y = 0.75x +1 ")
