@@ -9,5 +9,3 @@ if number == 0:
     print("Number is zero")
 if number < 0:
     print("Number is negative")
-
-

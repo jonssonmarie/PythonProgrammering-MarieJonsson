@@ -1,0 +1,1 @@
+# vikt viktigare än ålder
