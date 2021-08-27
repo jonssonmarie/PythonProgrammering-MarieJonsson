@@ -32,4 +32,4 @@ elif weight >= 15 and weight <26:
         print("Check with doctor since weight and age is not according to medicine package")
 
 else:
-    print(" To low weight or age! Medicine is not allowed ")
+    print("To low weight or age! Medicine is not allowed ")
