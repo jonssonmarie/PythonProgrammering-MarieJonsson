@@ -22,57 +22,48 @@ while n < 2:
     n += 1
 """
 # b) Add a menu for choosing difficulty level of the game
-# not ok yet
 
-n = 0
-def choices():
+# time in sec
+level_time = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5}
 
-    print("1: Want a faster level in multiplication?")
-    print("2: Want to try addition?")
-    print("3: Want to try subtraction?")
+print("Welcome to multiplication game!")
+print("Choose a level, 1 - 5, were 1 is the fastest")
 
-
-x = rnd.randint(1, 10)
-y = rnd.randint(1, 10)
-
+# loop to check right answer and time
 while True:
+    x = rnd.randint(1, 10)
+    y = rnd.randint(1, 10)
     try:
         choice = int(input("Enter the number for your choice: "))
 
-        if choice == 1:
+        start = time.time()
+        answer = int(input(f"{x} * {y} = "))
+        end = time.time()
+        elapsed_time = end - start
 
-            start = time.time()
-            answer = int(input(f"{x} * {y} = "))
-            end = time.time()
-            elapsed_time = end - start
+        for i, j in level_time.items():
+            n = level_time[i]
+            if n == choice:
+                slot = level_time[j]
 
-            if (x*y) == answer and elapsed_time <= 2:
+        if (x*y) == answer:
+            if elapsed_time <= slot:
                 print(f"Your are correct {x} * {y} = {answer}")
                 continue
-            elif (x*y) != answer and elapsed_time <= 2:
-                print("Wrong answer! ")
             else:
                 print("To long time")
-            choices()
-
-        elif choice == 2:
-            answer = int(input(f"{x} + {y} = "))
-
-            if (x + y) == answer:
-                print(f"Your are correct {x} + {y} = {answer}")
-            else:
-                print(" Incorrect answer")
+                print("Elapsed  time = ", elapsed_time)
                 break
-            n += 1
-
-        elif choice == 3:
-            answer = int(input(f"{x} - {y} = "))
-
-            if (x - y) == answer:
-                print(f"Your are correct {x} - {y} = {answer}")
-            else:
-                print(" Incorrect answer")
-                break
-            n += 1
+                
+        elif (x*y) != answer and elapsed_time <= slot:
+            print("Wrong answer! ")
+            print("Right answer are", x * y)
+            break
+            
+        elif (x*y) != answer and elapsed_time > slot:
+            print("To long time")
+            break
+            
     except:
         print("Invalid input")
+
