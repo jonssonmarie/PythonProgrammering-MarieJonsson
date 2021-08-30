@@ -18,4 +18,6 @@ while i <= n:
     sum1 += (1/(denom*2))
     i += 1
     denom *= 2
-print("Statement converge to:", sum1)
+print(f"Statement converge to: {sum1:.3f}")
+
+# b) 
