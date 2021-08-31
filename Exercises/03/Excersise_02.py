@@ -16,6 +16,6 @@ print()
 
 # b)
 sum2 = 0
-for i in range(1,101,2):
+for i in range(1,100,2):
     sum2 += i
 print(f"{sum2}", end = " ")
