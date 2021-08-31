@@ -1,5 +1,7 @@
 # Guess number game (*)
 # a) Create a guessing number game following this flow chart:
+# b) Make an algorithm to automatically guess the correct number. 
+#    Can you optimize to get as few guesses as possible?
 
 import random as rnd
 

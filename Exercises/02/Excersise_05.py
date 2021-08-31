@@ -20,4 +20,14 @@ while i <= n:
     denom *= 2
 print(f"Statement converge to: {sum1:.3f}")
 
-# b) ej klar
+# b)
+
+j = 0
+sum2 = 1
+
+while j <= n:
+    # nämnaren (denominator) ökar med +2 vid varje loop, + och - varannan gång, formeln =  (-1)^n/2n+1
+    sum2 = (((-1) ** j) / (2 * j + 1))
+    j += 1
+
+print(f"Statement converge to {sum2:.3f}")
