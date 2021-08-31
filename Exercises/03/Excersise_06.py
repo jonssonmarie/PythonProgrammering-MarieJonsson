@@ -7,7 +7,6 @@ How many grains are there in the whole chessboard when all squares
 are filled using this pattern?
 """
 
-
 no_rice = 1
 for i in range(0,64):
     no_rice += (2**i)
