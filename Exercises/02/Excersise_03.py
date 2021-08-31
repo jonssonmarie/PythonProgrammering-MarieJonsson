@@ -37,5 +37,5 @@ while comp_guess != user_num :
     i +=1
     print("No of loops:", i)
     print("The computer takes a guess...", user_num, comp_guess)
-    print(f"Correct guess: {comp_guess} = {user_num}")
+print(f"Correct guess: {comp_guess} = {user_num}")
 
