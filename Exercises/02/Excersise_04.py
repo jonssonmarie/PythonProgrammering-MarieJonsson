@@ -67,3 +67,4 @@ while True:
     except:
         print("Invalid input")
 
+# c - ej klar

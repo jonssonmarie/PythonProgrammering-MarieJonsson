@@ -16,4 +16,4 @@ while n < 10:
         print("Guess a higher number")
     n += 1
 
-   
+   # b) ej klar

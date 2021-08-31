@@ -20,4 +20,4 @@ while i <= n:
     denom *= 2
 print(f"Statement converge to: {sum1:.3f}")
 
-# b) 
+# b) ej klar
