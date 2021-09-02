@@ -82,3 +82,4 @@ print(tv_shows)
 
 grades = [["A", 30],["B", 25],["C", 20]]
 print(f"grades[1][0]: Betyg: {grades[1][0]}")
+
