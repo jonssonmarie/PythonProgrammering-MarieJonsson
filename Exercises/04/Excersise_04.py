@@ -22,14 +22,5 @@ for letter in alfabeth:
 # b) 2D list
 print("2D list:")
 
-# Alternativ utan list comprehension
-"""col = []
-for i in range(1,9):
-    for letter in alfabeth:
-        letter_x = letter + str(i)
-        col.append(letter_x)
-print("2D list:")
-print([col[i:i+8] for i in range(0, len(col), 8)])"""
-
 # Med list comrehension:
 [[f"{char}{i}" for char in alfabeth] for i in range(1,9)]
