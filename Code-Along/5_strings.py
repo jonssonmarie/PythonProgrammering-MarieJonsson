@@ -71,7 +71,23 @@ import re
 text = "Mitt telefonnummer är 031-123456, Adas telefonsnummer är 032-456789 och Bedas: 033-987543"
 
 match1 = re.findall(r"\d\d\d-\d\d\d\d\d\d", text)  # ett sätt
-match2 = re.findall(r"\d{3}-\d{6}", text)  # ett annat sätt
 print(match1)
+
+match2 = re.findall(r"\d{3}-\d{6}", text)  # ett annat sätt
 print(match2)
 
+# find all words ending with att
+text2= "Det var en gång en katt som tog på sig en hatt, jag blev matt, så jag spelade schack och vann med skolmatt"
+
+match3 = re.findall(r".att", text2)  # . ger att det kan vara vilket ord som helst framför att
+print(match3)
+
+
+
+personal_numbers = "Ida: 19950516-2235, Berit: 19581212-3213, Ada: 050524-1513, FEL: 19932235-3213"
+
+match_long = re.findall(r"\d{8}-\d{4}", personal_numbers) #\d - digit, {x} number of times it repeats
+print(f"Naive YYYYMMDD-XXXX: {match_long}")
+
+match_short = re.findall(r"\d{6}-\d{4}", personal_numbers)
+print(f"Naive YYMMDD-XXXX: {match_short}")
