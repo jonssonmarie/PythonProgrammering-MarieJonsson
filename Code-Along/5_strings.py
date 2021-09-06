@@ -52,9 +52,26 @@ print (f"Backwords quote[::-1] : {quote[::-1]}")  #  [start:stop-1]
 
 
 # Split strings another way
-numbers = input("Ange några tal separerade med  mellanslag: ").split()  # data type is string
-print(numbers)  # split leverear en lista [] av strängar
+#numbers =input("Ange några tal separerade med  mellanslag: ").split() 
+# data type is string, split returnerar lista av strängar
 
+#numbers = [float(number) for number in numbers if number.isdigit()]
+####  look for another method
+#print(numbers)
 
+#mean = sum(numbers/len(numbers))
+#print(f" Medelvärder är {mean}")
 
+# Regular expression
+# - find particular patterns in a string
+#  - e.g phone numbers, perosnal numbers, emails
+
+import re
+
+text = "Mitt telefonnummer är 031-123456, Adas telefonsnummer är 032-456789 och Bedas: 033-987543"
+
+match1 = re.findall(r"\d\d\d-\d\d\d\d\d\d", text)  # ett sätt
+match2 = re.findall(r"\d{3}-\d{6}", text)  # ett annat sätt
+print(match1)
+print(match2)
 
