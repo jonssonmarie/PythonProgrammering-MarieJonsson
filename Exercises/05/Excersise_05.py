@@ -7,7 +7,6 @@ Let the user input a word and:
   b) decrypt the message
   c) let the user choose either encryption or decryption.
 """
-
 import string
 
 # strings of alfabeth UPPER and LOWER
@@ -109,3 +108,4 @@ if word.isalpha():
 
 else:
     print("Only alfanumeric letters")
+    
