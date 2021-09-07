@@ -8,14 +8,14 @@ Create a function that takes a name as an input and:
 ["  MaRcUs ", " iDA aNderSon", "OLOF Olofsson            "  ]
 """
 lst = ["  MaRcUs ", " iDA aNderSon", "OLOF Olofsson            "]
-#new_lst = [] # empty list to append to just to check name
+new_lst = [] # temporary empty list, also used to append to just to check name
 
 
 def name_cleaner(lst):
     for l in lst:
         l = str(l).title()
         l = l.strip()
-        l.join(lst)
+        l.join(new_lst)
         #new_lst.append(l)
         print(l)
 

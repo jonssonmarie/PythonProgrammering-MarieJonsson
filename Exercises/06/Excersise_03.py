@@ -30,8 +30,10 @@ plt.ylabel("y")
 plt.title("g(x)")
 plt.show() 
 
-# deriverar man g(x) fås 4
-# deriverar man f(x) fås 2x 
-# i punkten x = 2 har f'(x) och g'(x) samma y värde och lutningen är gemensam där
-# vilket också PQ formeln ger
+""" 
+deriverar man g(x) fås 4
+deriverar man f(x) fås 2x 
+i punkten x = 2 har f'(x) och g'(x) samma y värde och lutningen är gemensam där
+vilket också PQ formeln konfirmerar
+"""
 

@@ -13,3 +13,15 @@ For example 5289 would give the following printout:
 2st 2-krona
 Now let the user input a value, and use the function to calculate the change.
 """
+def money_change(value):
+    count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # need to have the same number of numbers as banknotes to be able to zip.
+    banknotes = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0.50]
+    for i, count in zip(banknotes, count):
+        if value >= i:
+            count = value // i
+            value = value - i * count
+            print(f" {i} : {count:.0f} number of banknotes")
+
+
+value = float(input("Enter a value: "))
+money_change(value)
