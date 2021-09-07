@@ -12,9 +12,12 @@ For example 5289 would give the following printout:
 1st 5-krona
 2st 2-krona
 Now let the user input a value, and use the function to calculate the change.
+
+Jag lade med lite fler valörer
 """
 def money_change(value):
     count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # need to have the same number of numbers as banknotes to be able to zip.
+                                               # used to temporary save the counts
     banknotes = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0.50]
     for i, count in zip(banknotes, count):
         if value >= i:
