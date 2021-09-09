@@ -108,7 +108,3 @@ while True:
 print(f"Du är {age} år gammal")
 
 """
-
-import numpy as np
-
-x = np.linspace(-10,10)
