@@ -45,3 +45,4 @@ else:
     print(" Hej!\n Du har redan ett transportsätt som kostar mindre än spårvagn ")
     print(" Tack för att du testade!")
     print(" Du är välkommen att testa att åka spårvagn")
+    
