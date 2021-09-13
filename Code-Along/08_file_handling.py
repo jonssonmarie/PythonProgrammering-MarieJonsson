@@ -29,13 +29,13 @@ print(text)
 
 # clean up quotes.txt
 """
-inspect file text
-removeing leading and trailing whitespaces
-remove excessive whitespaces between words
-remove /n
+- inspect file text
+- removeing leading and trailing whitespaces
+- remove excessive whitespaces between words
+- remove /n
 
-add quote numbers
-exctract authors 
+- add quote numbers
+- exctract authors 
 """
 
 import re
