@@ -14,7 +14,7 @@ C: 40-49
 B: 50-59
 A: 60-70
 """
-path = "Files/test_result.txt"
+path = "C:/Users/trull/Documents/GitHub/PythonProgrammering-MarieJonsson/Code-Along/Files/test_result.txt"
 
 grade_F = []
 grade_E = []
@@ -37,18 +37,15 @@ def add_to_file(grade, grade_name):
 
 with open(path, "r", encoding="utf-8") as f1, open(path, "a", encoding="utf-8") as f2:
     texts = [text.strip(" \n") for text in f1.readlines()]
-    print(texts)                        # a) print text in terminal
+    print(f"Text in terminal from file: {texts}")                       # a) print text in terminal
     texts = sorted(texts)               # sortered
-    #print("sorted",texts)
 
     f2.write("\n\nSorted alphabetical order\n")
     for text in texts:                  # b) In alphabetical order to file
         f2.write(f"{text}\n")
-        pass
 
     for text in texts:
         t_split = text.split(" ")
-        print(t_split)
         t2 = int(t_split[-1])
 
         if t2 < 20:
