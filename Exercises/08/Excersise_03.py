@@ -10,8 +10,9 @@ import matplotlib.pyplot as plt
 list_2a = []
 list_2c = []
 
-path_2a = "C:/Users/trull/Documents/GitHub/PythonProgrammering-MarieJonsson/Code-Along/Files/NPvt19Ma2A.txt"
-path_2c = "C:/Users/trull/Documents/GitHub/PythonProgrammering-MarieJonsson/Code-Along/Files/NPvt19Ma2C.txt"
+path_2a = "Files/NPvt19Ma2A.txt"
+path_2c = "Files/NPvt19Ma2C.txt" 
+
 
 with open(path_2a, "r") as f2a, open(path_2c, "r") as  f2c:
     data_2a = f2a.readlines()
@@ -27,7 +28,7 @@ with open(path_2a, "r") as f2a, open(path_2c, "r") as  f2c:
     clean_text(data_2a, list_2a)
     clean_text(data_2c, list_2c)
    
-   
+
     grade_2a = []
     percentage_2a = []
     grade_2c = []
