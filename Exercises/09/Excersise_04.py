@@ -11,3 +11,8 @@ print(morse["POKEMON"])
 .------.-.------.
 
 """
+path = "../files/morse.txt"
+with open(path, "r", encoding= "utf-8") as f1:
+    data = f1.readlines()
+
+    print(data)
