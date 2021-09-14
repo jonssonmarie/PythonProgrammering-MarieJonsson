@@ -10,3 +10,8 @@ print(pokedex["Pikachu"])
 Spöke/Gift, 94
 Elektrisk, 25
 """
+
+path = "../files/pokemon_list.txt"
+
+fi = path.read()
+print(fi)
