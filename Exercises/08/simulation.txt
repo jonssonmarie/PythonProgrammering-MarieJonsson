@@ -1,0 +1,40 @@
+Number of rolls: 10   
+1 : 1, propability 0.100
+2 : 3, propability 0.300
+3 : 2, propability 0.200
+4 : 1, propability 0.100
+5 : 1, propability 0.100
+6 : 2, propability 0.200
+
+Number of rolls: 100   
+1 : 16, propability 0.160
+2 : 14, propability 0.140
+3 : 19, propability 0.190
+4 : 16, propability 0.160
+5 : 19, propability 0.190
+6 : 16, propability 0.160
+
+Number of rolls: 1000   
+1 : 178, propability 0.178
+2 : 176, propability 0.176
+3 : 154, propability 0.154
+4 : 167, propability 0.167
+5 : 165, propability 0.165
+6 : 160, propability 0.160
+
+Number of rolls: 10000   
+1 : 1670, propability 0.167
+2 : 1711, propability 0.171
+3 : 1675, propability 0.168
+4 : 1634, propability 0.163
+5 : 1623, propability 0.162
+6 : 1687, propability 0.169
+
+Number of rolls: 100000   
+1 : 16531, propability 0.165
+2 : 16639, propability 0.166
+3 : 16609, propability 0.166
+4 : 16877, propability 0.169
+5 : 16702, propability 0.167
+6 : 16642, propability 0.166
+
