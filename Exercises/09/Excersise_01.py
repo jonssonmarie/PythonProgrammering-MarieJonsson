@@ -14,4 +14,8 @@ courses = {
 "Projekt metodik" :  10,  "LIA 2": 70, "Examensarbete" : 15
 }
 
-print(courses)
+points = []
+for key, value in courses.items():
+    points.append(value)
+
+print(sum(points))
