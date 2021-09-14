@@ -15,7 +15,6 @@ B: 50-59
 A: 60-70
 """
 path = "Files/test_result.txt"
-#"C:/Users/trull/Documents/GitHub/PythonProgrammering-MarieJonsson/Code-Along/Files/test_result.txt"
 
 grade_F = []
 grade_E = []
