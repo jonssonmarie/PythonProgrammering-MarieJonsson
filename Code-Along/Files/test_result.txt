@@ -36,39 +36,3 @@ Karl Karlsson 32
 Ove Karlsten 41
 Sven Erik Karlsson 13
 Sven Erik Lundin 39
-
-
-Grade A
-Jakob Kallander 65
-
-
-Grade B
-Gore Bord 55
-
-
-Grade C
-Ella Ester 41
-Johan Johansson 42
-Ove Karlsten 41
-
-
-Grade D
-Björn Björnsson 39
-Bose Bosseson 32
-Emma Boden 32
-Erik Eriksson 31
-Jonas Jonasson 31
-Karl Karlsson 32
-Sven Erik Lundin 39
-
-
-Grade E
-Adam Gustafsson 25
-Emil Johansson 23
-Hanna Karlsson 23
-Håkan Håkanson 24
-Ida Håkansson 23
-
-
-Grade F
-Sven Erik Karlsson 13
