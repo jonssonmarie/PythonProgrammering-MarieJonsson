@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 list_2a = []
 list_2c = []
 
-path_2a = "Files/NPvt19Ma2A.txt"
-path_2c = "Files/NPvt19Ma2C.txt" 
+path_2a = "../files/NPvt19Ma2A.txt" 
+path_2c = "../files/NPvt19Ma2C.txt" 
 
 
 with open(path_2a, "r") as f2a, open(path_2c, "r") as  f2c:
