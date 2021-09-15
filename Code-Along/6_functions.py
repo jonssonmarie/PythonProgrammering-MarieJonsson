@@ -54,6 +54,7 @@ def func_name(*args):
 
 # Draw lines
 
+"""
 import matplotlib.pyplot as plt
 
 def draw_lines(x, k=1, m=1, title=""):
@@ -69,7 +70,7 @@ def draw_lines(x, k=1, m=1, title=""):
 x = list(range(-5,5))
 draw_lines(x, title="Lines")
 draw_lines(x, k=-2, m=1,title="Lines")
-
+"""
 
 #Draw circle
 
