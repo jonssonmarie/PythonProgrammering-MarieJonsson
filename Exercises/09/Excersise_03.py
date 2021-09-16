@@ -15,6 +15,7 @@ path = "../files/pokemon_list.txt"
 
 pokedex = {} # "pokemon": "type, index"
 
+# öppnar fil och rensar data, ssplitar och lägger ihop och lägger i en dictionary
 with open(path, "r", encoding ="utf-8") as f1:
     datan = f1.readlines()
     #print(datan)
@@ -26,7 +27,7 @@ with open(path, "r", encoding ="utf-8") as f1:
         val_set = ", ".join(val)
         pokedex[d_split[1]] = val_set
         
-            
+# printar en sökning i dict och returnerar value            
 print(pokedex["Dragonair"])
 print(pokedex["Dragonite"])
 print(pokedex["Pikachu"])

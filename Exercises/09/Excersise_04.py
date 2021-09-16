@@ -16,7 +16,7 @@ path = "../files/morse.txt"
 morse = {}
 sentence = input("Skriv in en mening eller ord du vill ha översatt till morse: ")
 
-
+# ändrar till stor bokstav, söker igenom och hittar rätt morse kod per bokstav i meningen
 def morse_code(sentence, morse):
     sentence_morse = " "
     for char in sentence:
@@ -30,7 +30,7 @@ def morse_code(sentence, morse):
                 sentence_morse += " "
     print(f"Översättning till Morse: {sentence_morse}")
 
-
+# öppnar filen, rensar och flyttar till en dictionary
 with open(path, "r", encoding= "utf-8") as f1:
     datan = f1.readlines()
 

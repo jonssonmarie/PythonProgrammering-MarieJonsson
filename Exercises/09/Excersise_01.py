@@ -14,6 +14,7 @@ courses = {
 "Projekt metodik" :  10,  "LIA 2": 70, "Examensarbete" : 15
 }
 
+# alla values läggs i en lista och sen räknas summan ut
 points = []
 for key, value in courses.items():
     points.append(value)

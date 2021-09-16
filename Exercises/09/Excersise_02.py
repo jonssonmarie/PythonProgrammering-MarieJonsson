@@ -8,12 +8,12 @@ Then print them out in the terminal.
 import random as rnd
 
 dices = {}
-
+# simulerar tärningskast
 for i in range(0,1000000):
     dice = rnd.randint(1,6)
     dices[i] = dice
 
-
+# räknar antal per 1-6 genom att göra dict till list och sedan använda count
 print("No 1:",list(dices.values()).count(1))
 print("No 2:",list(dices.values()).count(2))
 print("No 3:",list(dices.values()).count(3))
