@@ -15,7 +15,7 @@ path = "../files/pokemon_list.txt"
 
 pokedex = {} # "pokemon": "type, index"
 
-# öppnar fil och rensar data, ssplitar och lägger ihop och lägger i en dictionary
+# öppnar fil och rensar data, splitar och lägger ihop och lägger i en dictionary
 with open(path, "r", encoding ="utf-8") as f1:
     datan = f1.readlines()
     #print(datan)
