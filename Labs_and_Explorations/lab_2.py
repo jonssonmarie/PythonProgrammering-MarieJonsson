@@ -4,10 +4,9 @@ import math
 import random as rnd
 
 # paths to files
-path = "../files/morse.txt"
-pichu_path = "..files/pichu.txt"
-pikachu_path = "..files/pikachu.txt"
-test_points_path = "..files/test_points.txt"
+pichu_path = "../files/pichu.txt"
+pikachu_path = "../files/pikachu.txt"
+test_points_path = "../files/test_points.txt"
 
 # open and read files
 with open(pichu_path, 'r') as pichu, open(pikachu_path, 'r') as pikachu, open(test_points_path, 'r') as test_point:
