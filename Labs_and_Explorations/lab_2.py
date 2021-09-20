@@ -1,5 +1,5 @@
 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  # fixa install
 import math
 import random as rnd
 
@@ -7,6 +7,8 @@ import random as rnd
 pichu_path = "../files/pichu.txt"
 pikachu_path = "../files/pikachu.txt"
 test_points_path = "../files/test_points.txt"
+
+# HITTAR INTE FILERNA I VANLIG ORDNING ej fixat install än
 
 # open and read files
 with open(pichu_path, 'r') as pichu, open(pikachu_path, 'r') as pikachu, open(test_points_path, 'r') as test_point:
@@ -198,7 +200,7 @@ plt.legend()
 #plt.show()
 
 
-
+# ska ej ligga här
 def calculate_accuracy():
     """
     accuracy = (TP + TN)/ Total
