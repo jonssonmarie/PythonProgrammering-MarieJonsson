@@ -1,12 +1,18 @@
 
+"""
+för att köra från terminal 
+glöm inte att ställa dig i rätt directory
+pipenv run python lab_2.py
+"""
+
 import matplotlib.pyplot as plt  # fixa install
 import math
 import random as rnd
 
 # paths to files
-pichu_path = "../files/pichu.txt"
-pikachu_path = "../files/pikachu.txt"
-test_points_path = "../files/test_points.txt"
+pichu_path = "files/pichu.txt"
+pikachu_path = "files/pikachu.txt"
+test_points_path = "files/test_points.txt"
 
 # HITTAR INTE FILERNA I VANLIG ORDNING ej fixat install än
 
