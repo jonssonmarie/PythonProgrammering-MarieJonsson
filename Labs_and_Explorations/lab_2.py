@@ -31,6 +31,7 @@ pichu_path = "C://Users//trull//Desktop//ITHS//Lab2//pichu.txt"
 pikachu_path = "C://Users//trull//Documents//Lab2//pikachu.txt"
 test_points_path = "C://Users//trull//Desktop//ITHS//Lab2//test_points.txt"
 
+
 # open and read files
 with open(pichu_path, 'r') as pichu, open(pikachu_path, 'r') as pikachu, open(test_points_path, 'r') as test_point:
     pichu_points = pichu.readlines()[1:]
@@ -242,8 +243,18 @@ test_acc_pikachu_height = [el[0][1] for el in test_accurracy_pikachu]
 
 
 # plot of Pichu and Pikachu including Test points
-# for the part 1 and 2 in the basic task
-plt.figure(1)
+"""
+'b' as blue
+'g' as green
+'r' as red
+'c' as cyan
+'m' as magenta
+'y' as yellow
+'k' as black
+'w' as white
+"""
+# for plot of part 1 and 2 in the basic task
+plt.figure(1, figsize=[7.4, 5.8])
 plt.title("Test_points")
 plt.xlabel("width")
 plt.ylabel("height")
@@ -255,8 +266,8 @@ plt.plot(test_data_width, test_data_height, 'bo', label="Test points")
 plt.plot()
 plt.legend()
 
-# for accuracy print
-plt.figure(2)
+# for accuracy plot
+plt.figure(2, figsize=[7.4, 5.8])
 plt.title("Accuracy")
 plt.xlabel("width")
 plt.ylabel("height")
@@ -269,4 +280,5 @@ plt.plot(test_acc_pikachu_width, test_acc_pikachu_height, 'bo', label="test_acc_
 plt.plot()
 plt.legend()
 plt.show()
+
 
