@@ -20,3 +20,5 @@ Also create a method say_hello() that prints
 Hi, my name is ..., I am ... years old, my email address is ...  
 """
 
+class Person:
+    pass
