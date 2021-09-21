@@ -26,10 +26,10 @@ import matplotlib.pyplot as plt
 import math
 import random as rnd
 
-# Paths to files        check paths again och ALLA tappade paths
-pichu_path = "../files/pichu.txt"
-pikachu_path = "../files/pikachu.txt"
-test_points_path = "../files/test_points.txt"
+# Paths to files   
+pichu_path = "files/pichu.txt"
+pikachu_path = "files/pikachu.txt"
+test_points_path = "files/test_points.txt"
 
 # open and read files
 with open(pichu_path, 'r') as pichu, open(pikachu_path, 'r') as pikachu, open(test_points_path, 'r') as test_point:
