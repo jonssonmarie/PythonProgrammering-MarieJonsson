@@ -44,8 +44,14 @@ class Frac:
     def division(self):
         return self.nominator/self.denominator
 
-    def simplify(self):
-        pass
+    def simplify(self, nominator, denominator):
+        while nominator % denominator != 0:
+            old_n = nominator
+            old_d = denominator
+
+            nominator = old_d
+            denominator = old_n % old_d
+        return denominator
 
     def mixed(self):
         pass
