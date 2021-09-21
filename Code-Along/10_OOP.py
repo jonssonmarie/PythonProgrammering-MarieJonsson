@@ -128,7 +128,7 @@ class Student:
  
         # property
 
-    @property  
+    @property  # har en getter, setter och delter method som kan specificeras
     def age(self) -> float:
         return self._age        # note underscore
         # property och underscore gör att man kan läsa av age men inte 

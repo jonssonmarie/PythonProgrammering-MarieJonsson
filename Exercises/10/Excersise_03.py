@@ -20,11 +20,47 @@ study() and say_hello() methods from your Student object.
 """
 #  INTE KLAR 
 
+import re
+
 class Person:
-    def __init__(self, name, age, email):
+    def __init__(self, name, age, email, workplace):
         self.name = name
         self.age = age
         self.email = email
+        self.workplace = workplace
+
+    @property
+    def name(self) -> str:
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        if not isinstance(value, str):
+            raise Exception(f"Please use string and not{type(value)}")
+        self._name = value
+
+
+    @property
+    def age(self) -> float:
+        return self._age
+
+    @age.setter
+    def age(self, value) -> float:
+        if not isinstance(value, (int, float)):
+            raise Exception(f"Please use int or float and not {type(value)}")
+        self._age = value
+        return value
+
+    @property
+    def email(self) -> str:
+        return self._email
+
+    @email.setter
+    def email(self, value) -> str:
+        if re.findall("@", value):
+            self._email = value
+        else:
+            raise TypeError(f"{type(value)} is not valid as email, xxxx@yyyy.zzz is the correct format\n")
 
 
 class Student(Person):
@@ -40,16 +76,17 @@ class Teacher(Student):
         return f"teach...teach...teach...more teaching"
 
     def say_hello(self):
-        return Student.say_hello(self)
+        return f"Yo, I am a teacher my name is {self.name}, I am {self.age} years old, my email address is {self.email} and I work at {self.workplace}\n"
+        #return Student.say_hello(self)
 
 
-student1 = Student("Maggan", 23, "maggan@student.se")
+student1 = Student("Maggan", 23, "maggan@student.se", "")
 print(student1.study())
 print("Student class: ",student1.say_hello())
 
-teacher1 = Teacher("Gudrun", 51, "gudrun@teacher.com")
+teacher1 = Teacher("Gudrun", 51, "gudrun@teacher.com", "ITHS")
 print("Teacher class:",teacher1.say_hello())
 
 
-student2 = Student("Petra", 25, "petra@student.se")
+student2 = Student("Petra", 25, "petra@student.se", "")
 print("Student name:",student2.name)
