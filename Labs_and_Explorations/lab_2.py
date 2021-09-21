@@ -26,11 +26,10 @@ import matplotlib.pyplot as plt
 import math
 import random as rnd
 
-# paths to files
-pichu_path = "C://Users//trull//Desktop//ITHS//Lab2//pichu.txt"
-pikachu_path = "C://Users//trull//Documents//Lab2//pikachu.txt"
-test_points_path = "C://Users//trull//Desktop//ITHS//Lab2//test_points.txt"
-
+# Paths to files        check paths again och ALLA tappade paths
+pichu_path = "../files/pichu.txt"
+pikachu_path = "../files/pikachu.txt"
+test_points_path = "../files/test_points.txt"
 
 # open and read files
 with open(pichu_path, 'r') as pichu, open(pikachu_path, 'r') as pikachu, open(test_points_path, 'r') as test_point:
@@ -243,6 +242,17 @@ test_acc_pikachu_height = [el[0][1] for el in test_accurracy_pikachu]
 
 
 # plot of Pichu and Pikachu including Test points
+"""
+'b' as blue
+'g' as green
+'r' as red
+'c' as cyan
+'m' as magenta
+'y' as yellow
+'k' as black
+'w' as white
+"""
+
 fig,ax = plt.subplots(1,2, figsize=(12,6))
 
 ax[0].plot(pichu_width, pichu_height,'g.',label="Pichu")
