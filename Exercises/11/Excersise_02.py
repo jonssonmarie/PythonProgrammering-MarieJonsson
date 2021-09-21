@@ -26,3 +26,32 @@ Example of tests that it should handled:
 2/4 == 1/2 --> True
 3/4 += 2 = 11/4
 """
+
+class Frac:
+    def __init__(self, nominator, denominator):
+        self.nominator = nominator
+        self.denominator = denominator
+
+    def addition(self):
+        return sum(self.nominator, self.denominator)
+
+    def subtraction(self):
+        return abs(self.nominator - self.denominator)
+
+    def multiplication(self):
+        return self.nominator * self.denominator
+
+    def division(self):
+        return self.nominator/self.denominator
+
+    def simplify(self):
+        pass
+
+    def mixed(self):
+        pass
+
+    def __str__(self):
+        pass
+
+    def __eq__(self, other):
+        pass

@@ -26,14 +26,21 @@ class Video:
         self.title = title
         self.gender = gender
         self.rating = rating
+    
+    def info(self) -> str:
+        pass
 
 
 class TV_serie:
+    #def __super__()
     def __init__(self, title: str, genre: str, rating: float, num_episodes: int) -> None:
         self.title = title
         self.genre = genre
         self.rating = rating
         self.num_episodes = num_episodes
+
+    def info(self) -> str:
+        pass
 
 
 class Movie:
@@ -42,6 +49,9 @@ class Movie:
         self.genre = genre
         self.rating = rating
         self.duration = duration
+
+    def info(self) -> str:
+        pass
 
 
 class Documentary:
