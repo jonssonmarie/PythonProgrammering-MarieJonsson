@@ -18,3 +18,25 @@ __repr__ method to represent the production rate and current stock.
 Use composition and/or inheritance in a strategic way.
 Feel free to go beyond and implement more features.
 """
+
+class Village:
+    def __init__(self, fields, crop, clay, lumber, iron) -> None:
+        self.fields = fields
+        self.crop = crop
+        self.clay = clay
+        self.lumber = lumber
+        self.iron = iron
+    
+    def add_resources(self):
+        pass
+
+    def subtract_resources(self):
+        pass
+
+    def count_resources(self):
+        pass
+
+    def __repr__(self):
+        pass
+
+
