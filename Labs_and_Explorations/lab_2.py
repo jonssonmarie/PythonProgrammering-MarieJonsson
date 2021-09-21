@@ -243,42 +243,29 @@ test_acc_pikachu_height = [el[0][1] for el in test_accurracy_pikachu]
 
 
 # plot of Pichu and Pikachu including Test points
-"""
-'b' as blue
-'g' as green
-'r' as red
-'c' as cyan
-'m' as magenta
-'y' as yellow
-'k' as black
-'w' as white
-"""
-# for plot of part 1 and 2 in the basic task
-plt.figure(1, figsize=[7.4, 5.8])
-plt.title("Test_points")
-plt.xlabel("width")
-plt.ylabel("height")
-plt.xlim(5, 40)     # cut the axis in x, the same for y
-plt.ylim(15, 60)
-plt.plot(pichu_width,pichu_height,'g.',label="Pichu")
-plt.plot(pikachu_width, pikachu_height,'r.', label="Pikachu")
-plt.plot(test_data_width, test_data_height, 'bo', label="Test points")
-plt.plot()
-plt.legend()
+fig,ax = plt.subplots(1,2, figsize=(12,6))
 
-# for accuracy plot
-plt.figure(2, figsize=[7.4, 5.8])
-plt.title("Accuracy")
-plt.xlabel("width")
-plt.ylabel("height")
-plt.xlim(5, 40)     # cut the axis in x, the same for y
-plt.ylim(15, 60)
-plt.plot(pichu_acc_width, pichu_acc_height, 'g.', label="acc_pichu")
-plt.plot(pikachu_acc_width, pikachu_acc_height, 'r.', label="acc_pikachu")
-plt.plot(test_acc_pichu_width, test_acc_pichu_height, 'ko', label="test_acc_pichu")
-plt.plot(test_acc_pikachu_width, test_acc_pikachu_height, 'bo', label="test_acc_pikachu")
-plt.plot()
-plt.legend()
+ax[0].plot(pichu_width, pichu_height,'g.',label="Pichu")
+ax[0].plot(pikachu_width, pikachu_height,'r.', label="Pikachu")
+ax[0].plot(test_data_width, test_data_height, 'bo', label="Test points")
+
+ax[1].plot(pichu_acc_width, pichu_acc_height, 'g.', label="acc_pichu")
+ax[1].plot(pikachu_acc_width, pikachu_acc_height, 'r.', label="acc_pikachu")
+ax[1].plot(test_acc_pichu_width, test_acc_pichu_height, 'ko', label="test_acc_pichu")
+ax[1].plot(test_acc_pikachu_width, test_acc_pikachu_height, 'bo', label="test_acc_pikachu")
+
+ax[0].set_title("Test points")
+ax[0].set_xlabel("width")
+ax[0].set_ylabel("height")
+ax[0].set_xlim(5, 40)     # cut the axis in x, the same for y
+ax[0].set_ylim(10, 60)
+ax[0].legend()
+
+ax[1].set_title("Accuracy")
+ax[1].set_xlabel("width")
+ax[1].set_ylabel("height")
+ax[1].set_xlim(5, 40)     # cut the axis in x, the same for y
+ax[1].set_ylim(15, 60)
+ax[1].legend()
+
 plt.show()
-
-
