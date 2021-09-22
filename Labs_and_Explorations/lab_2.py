@@ -25,11 +25,27 @@ Bonusuppgifter (frivilliga)
 import matplotlib.pyplot as plt
 import math
 import random as rnd
+import os.path
 
 # Paths to files   
 pichu_path = "files/pichu.txt"
 pikachu_path = "files/pikachu.txt"
 test_points_path = "files/test_points.txt"
+
+# check if files exist
+paths = [pichu_path, pikachu_path, test_points_path]
+
+for file in paths:
+    if not os.path.isfile(file):
+        raise Exception(f"Files or file is not found")
+
+
+# open and read files
+with open(pichu_path, 'r') as pichu, open(pikachu_path, 'r') as pikachu, open(test_points_path, 'r') as test_point:
+    pichu_points = pichu.readlines()[1:]
+    pikachu_points = pikachu.readlines()[1:]
+    test_points = test_point.readlines()
+
 
 # open and read files
 with open(pichu_path, 'r') as pichu, open(pikachu_path, 'r') as pikachu, open(test_points_path, 'r') as test_point:
