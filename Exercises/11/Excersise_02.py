@@ -31,27 +31,44 @@ class Frac:
     def __init__(self, nominator, denominator):
         self.nominator = nominator
         self.denominator = denominator
-
-    def addition(self):
-        return sum(self.nominator, self.denominator)
-
-    def subtraction(self):
-        return abs(self.nominator - self.denominator)
-
-    def multiplication(self):
-        return self.nominator * self.denominator
-
-    def division(self):
-        return self.nominator/self.denominator
+        self.simplify(nominator, denominator)
 
     def simplify(self, nominator, denominator):
         while nominator % denominator != 0:
-            old_n = nominator
-            old_d = denominator
+            old_denom = nominator
+            old_nom = denominator
 
-            nominator = old_d
-            denominator = old_n % old_d
+            nominator = old_nom
+            denominator = old_denom % old_nom
         return denominator
+
+    def __add__(self, other):
+        # Return a + b, for a and b numbers.
+        new_nom = self.nominator * other.denominator + other.nominator * self.denominator
+        new_denom = self.denominator * other.denominator
+        lowest_terms = self.simplify(new_nom, new_denom)
+        return Frac(new_nom // lowest_terms, new_denom // lowest_terms)
+
+    def __sub__(self, other):
+        # Return a - b, for a and b numbers.
+        new_nom = self.nominator * other.denominator - other.nominator * self.denominator
+        new_denom = self.denominator * other.denominator
+        lowest_terms = self.simplify(new_nom, new_denom)
+        return Frac(new_nom // lowest_terms, new_denom // lowest_terms)
+
+    def __mul__(self, other):
+        # Return a * b, for a and b numbers.
+        new_nom = self.nominator * other.nominator
+        new_denom = self.denominator * other.denominator
+        lowest_terms = self.simplify(new_nom, new_denom)
+        return Frac(new_nom // lowest_terms, new_denom // lowest_terms)
+
+    def __truediv__(self, other):
+        # a = truediv(a, b) is equivalent to a /= b.
+        new_nom = (self.nominator * other.denominator)
+        new_denom = self.denominator * other.nominator
+        lowest_terms = self.simplify(new_nom, new_denom)
+        return Frac(new_nom // lowest_terms, new_denom // lowest_terms)
 
     def mixed(self):
         pass
