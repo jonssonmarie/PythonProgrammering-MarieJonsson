@@ -107,9 +107,14 @@ except NameError as err:
     print(err)
 
 anna = Person("Anna", 68, "anna_andersson@himlen.se")
-
-print(f"Persons hallo:  {anna.say_hello()}\n")
 print(f"Persons name: {anna.name}")
 print(f"Persons age:  {anna.age}")
 print(f"Persons email:  {anna.email}")
+print(f"Persons hallo:  {anna.say_hello()}\n")
 
+
+beata = Person("Beata34", 56, "beata_karlsson@banjo.com")
+print(f"Persons name: {beata.name}")
+print(f"Persons age:  {beata.age}")
+print(f"Persons email:  {beata.email}")
+print(f"Persons hallo:  {beata.say_hello()}\n")
