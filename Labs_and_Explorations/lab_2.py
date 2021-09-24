@@ -53,7 +53,7 @@ with open(pichu_path, 'r') as pichu, open(pikachu_path, 'r') as pikachu, open(te
     pikachu_points = pikachu.readlines()[1:]
     test_points = test_point.readlines()
 
-
+# User input and check the user input 
 while True:
     user = input("Enter a point and see which class it belongs to: ")
     try:
@@ -124,7 +124,7 @@ for c in test_acc_pikachu_coord:
     test_acc_w_h.append(c)
 
 
-# Test points data sorted by width and height  ----------------------- TEST DATA --------------------
+# Test points data sorted by width and height  ----------------------- TEST POINT DATA --------------------
 test_data_width = test_data[0:len(test_data):2]
 test_data_height = test_data[1:len(test_data):2]
 
@@ -183,8 +183,8 @@ sort_for_user_data_one(distance_pichu, distance_pikachu)
 # sort and reduce to eg. 5 closest after the calculated distances
 sort_dist_pichu = sorted(distance_pichu)[0:5]
 sort_dist_pikachu = sorted(distance_pikachu)[0:5]
-sort_dist_acc_pichu = sorted(dist_acc_pichu)[0:10]       # 10 -----
-sort_dist_acc_pikachu = sorted(dist_acc_pikachu)[0:10]   # 10 -----
+sort_dist_acc_pichu = sorted(dist_acc_pichu)[0:10]       
+sort_dist_acc_pikachu = sorted(dist_acc_pikachu)[0:10]   
 
 
 # zip two lists elem by elem and then compare and measure how many pichu vs pikachu there is
@@ -258,17 +258,6 @@ test_acc_pikachu_height = [el[0][1] for el in test_accurracy_pikachu]
 
 
 # plot of Pichu and Pikachu including Test points
-"""
-'b' as blue
-'g' as green
-'r' as red
-'c' as cyan
-'m' as magenta
-'y' as yellow
-'k' as black
-'w' as white
-"""
-
 fig,ax = plt.subplots(1,2, figsize=(12,6))
 
 ax[0].plot(pichu_width, pichu_height,'g.',label="Pichu")
