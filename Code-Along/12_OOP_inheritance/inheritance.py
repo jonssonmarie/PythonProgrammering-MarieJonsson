@@ -7,6 +7,7 @@ Inheritance and composition
 - composition has weaker coupling between classes and the relation: "has a", e.g. a Classroom has a Student
 """
 
+from old_coins import OldCoinsStash
 import re 
 
 class Person:
