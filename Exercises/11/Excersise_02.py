@@ -45,7 +45,7 @@ class Frac:
             denominator = old_denom % old_nom
         return denominator
 
-    def __add__(self, other: (float, int)):
+    def __add__(self, other):
         if type(other) == int or type(other) == float:
             new_nom = self.nominator + other * self.denominator
             new_denom = self.denominator
@@ -87,13 +87,13 @@ class Frac:
         print("__rsub__ is called ...")
         return -(self - other)
 
-    def __mul__(self, value: (float, int)):
+    def __mul__(self, value):
         # Return a/b * c, for a, b and c numbers.
         if self.validate(self):
             new_nom = self.nominator * value
             return Frac(new_nom , self.denominator)
 
-    def __rmul__(self, value: (float, int)):
+    def __rmul__(self, value):
         print("__rmul__ is called ...")
         return self * value
 
@@ -110,7 +110,7 @@ class Frac:
         if self.validate(self):
             rest = self.nominator/self.denominator - self.nominator//self.denominator
             fraction_rest = Fraction(rest)
-            return (f"Mixed result: {self.nominator//self.denominator} {fraction_rest}")
+            return (f"mixed result: {self.nominator//self.denominator} {fraction_rest}")
 
     @staticmethod
     def validate(value):
@@ -171,9 +171,7 @@ f6 = f1/f2
 print(f"{f1} / {f2} = {f6}")
 
 # mixed terms
-print(f1/f2)
-print(f"{f1} / {f2} = {f1/f2}")
-print(f"{f1.mixed(f2)}")
+print(f"{f1} / {f2} as {f1.mixed(f2)}")
 
 # eq
 print(f"{f1} == {f2} : {f1 == f2}")
