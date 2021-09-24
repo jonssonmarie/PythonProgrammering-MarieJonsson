@@ -59,7 +59,7 @@ class Person:
             raise TypeError(f"{type(value)} is not valid as email, xxxx@yyyy.zzz is the correct format\n")
 
     def say_hello(self) -> str:
-        print(f"Mu name is {self.name}, and I am {self.age} years old, you can reach me at: {self.email}")
+        print(f"My name is {self.name}, and I am {self.age} years old, you can reach me at: {self.email}")
 
 
 class Student(Person):
