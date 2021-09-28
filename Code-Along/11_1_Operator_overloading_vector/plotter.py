@@ -1,4 +1,4 @@
-import matplotlib.pypolt as plt
+import matplotlib.pyplot as plt
 
 
 class PlotVector:
