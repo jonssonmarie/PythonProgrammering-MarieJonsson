@@ -16,5 +16,5 @@ polymorism - operator overloadong/ ad hoc polymorfism
 
 
 UML 
-har men en Är relation eller en HAR relation
+har man en Är relation eller en HAR relation
 """
