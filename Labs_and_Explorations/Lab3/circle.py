@@ -4,8 +4,8 @@ Class to create a geometric Circle
 import matplotlib.pyplot as plt
 import math
 
-from random_coord import random_coordinates
-point_x, point_y, point_z = random_coordinates()
+from random_point import random_point
+point_x, point_y, point_z = random_point()  # high jack bye using # random_point() and add your own points eg. 1,2,3
 
 
 class Circle:
@@ -27,6 +27,10 @@ class Circle:
         # calculate circle circumference = pi * 2 * r
         circle_circumference = 2 * math.pi * self.radius_circle
         return f"Circumferences: {circle_circumference:.2f} mm"
+
+    def circle_center_point(self):
+        # circle center point x,y,z
+        return f"Center point (x,y): ({self.x}, {self.y})"
 
     def move_geometry_circle(self, move_x, move_y):
         # set the new coordinates to move the rectangle
@@ -98,9 +102,11 @@ circle_2 = Circle(6, 2, 3)
 print(circle_1)
 print(circle_1.circle_areas())
 print(circle_1.circle_circumferences())
+print(circle_1.circle_center_point())
 print(circle_1.check_position(point_x, point_y))
 print(f"circle_1 == circle_2 : {circle_1 == circle_2}")
 print(circle_1.draw_circle())
-print(circle_1.move_geometry_circle(5,5))
+print("New coordinates: ", circle_1.move_geometry_circle(5,5))
+print(circle_1.circle_center_point())
 print(circle_1.draw_circle())
 print(circle_1.check_position(point_x, point_y))
