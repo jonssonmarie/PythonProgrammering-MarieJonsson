@@ -37,10 +37,10 @@ class Lab3Circle(unittest.TestCase):
         with self.assertRaises(ValueError):
             c = Circle(-1, 2, 7)
 
-    def test_area(self):
+    def test_area(self) -> float:
         c1 = self.create_circle()
         c2 = Circle(5, 1, 3)
-        self.assertAlmostEqual(c1, c2)
+        self.assertAlmostEqual(c1, c2)                    # FRÅGA Kokchun - varför?
 
 
 class Lab3Rectangle(unittest.TestCase):
