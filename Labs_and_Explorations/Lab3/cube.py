@@ -7,8 +7,8 @@ import math
 
 from rectangle import Rectangle
 
-from random_coord import random_coordinates
-point_x, point_y, point_z = random_coordinates()
+from random_point import random_point
+point_x, point_y, point_z = random_point()  # high jack bye using # random_point() and add your own points eg. 1,2,3
 
 
 class Cube(Rectangle):
@@ -34,6 +34,18 @@ class Cube(Rectangle):
         # calculate cube circumradius = side * sqrt(3) // 2
         circumradius = self.side1 * math.sqrt(3) // 2
         return f"Cube circumradius is: {circumradius} mm"
+
+    def cube_center_point(self):
+        # calculate cube center point x,y, z
+        cube_center_x = self.x + (self.side1/2)
+        cube_center_y = self.y + (self.side1/2)
+        cube_center_z = self.z + (self.side1/2)
+        return f"Center point (x,y,z): ({cube_center_x}, {cube_center_y}, {cube_center_z})"
+
+    def cube_volume(self):
+        # calculate cube volume
+        volume = math.pow(self.side1, 3)
+        return f"Cube volume = {volume:.2f} mm^3"
 
     def move_cube(self, move_x, move_y, move_z):
         # set the new coordinates to move the rectangle
@@ -106,7 +118,9 @@ print(cube_1.check_pos_cube(point_x, point_y, point_z))
 print(cube_1.rectangle_areas())
 print(cube_1.cube_circumferences())
 print(cube_1.cube_circumradius())
+print(cube_1.cube_center_point())
+print(cube_1.cube_volume())
 print(cube_1.draw_cube())
-print(cube_1.move_cube(6, 6, 6))
+print("New coordinates:", cube_1.move_cube(6, 6, 6))
 print(cube_1.draw_cube())
 print(cube_1.check_pos_cube(point_x, point_y, point_z))
