@@ -7,8 +7,8 @@ import numpy as np
 
 from circle import Circle
 
-from random_coord import random_coordinates
-point_x, point_y, point_z = random_coordinates()
+from random_point import random_point
+point_x, point_y, point_z = random_point()  # high jack bye using # random_point() and add your own points eg. (1,2,3)
 
 
 class Sphere(Circle):
@@ -28,6 +28,15 @@ class Sphere(Circle):
     def sphere_circumference(self):
         # calculate sphere circumference = circle circumference
         return super().circle_circumferences()
+
+    def sphere_center_point(self):
+        # sphere center point x,y,z
+        return f"Center point (x,y, z): ({self.x}, {self.y}, {self.z})"
+
+    def sphere_volume(self):
+        # calculate sphere volume V ? 4/3 * pi * r^3
+        volume = 4/3 * math.pi * math.pow(self.radius_circle,3)
+        return f"Sphere volume = {volume:.2f} mm^3"
 
     def move_sphere(self, move_x, move_y, move_z):
         # set the new coordinates to move the rectangle
@@ -97,8 +106,11 @@ sphere_2 = Sphere(5, 2, 1, 2)
 print(sphere_1)
 print(sphere_1.sphere_areas())
 print(sphere_1.sphere_circumference())
+print(sphere_1.sphere_center_point())
+print(sphere_1.sphere_volume())
 print(sphere_1.check_pos_sphere(point_x, point_y, point_z))
 print(sphere_1.draw_sphere())
-print(sphere_1.move_sphere(5, 5, 5))
+print("New coordinates: ",sphere_1.move_sphere(5, 5, 5))
+print(sphere_1.sphere_center_point())
 print(sphere_1.draw_sphere())
 print(sphere_1.check_pos_sphere(point_x, point_y, point_z))
