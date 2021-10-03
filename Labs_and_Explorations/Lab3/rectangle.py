@@ -3,8 +3,8 @@ Class to create a geometric rectangle
 """
 import matplotlib.pyplot as plt
 
-from random_coord import random_coordinates
-point_x, point_y, point_z = random_coordinates()
+from random_point import random_point
+point_x, point_y, point_z = random_point()  # high jack bye using # random_point() and add your own points eg. (1,2,3)
 
 
 class Rectangle:
@@ -27,6 +27,12 @@ class Rectangle:
         # calculate rectangle circumference
         rectangle_circumference = self.side1 * 2 + self.side2 * 2
         return f"Circumferences: {rectangle_circumference:.2f} mm"
+
+    def rectangle_center_point(self):
+        # calculate rectangle center point x,y
+        rectangle_center_x = self.x + (self.side1/2)
+        rectangle_center_y = self.y + (self.side2/2)
+        return f"Center point (x,y): ({rectangle_center_x}, {rectangle_center_y})"
 
     def move_rectangle(self, move_x, move_y):
         # set the new coordinates to move the rectangle
@@ -94,15 +100,35 @@ class Rectangle:
 # objects
 rectangle_1 = Rectangle(5,10, 1, 1)
 rectangle_2 = Rectangle(3, 3, 2, 3)
+rectangle_3 = Rectangle(4, 1, -2, -3)
 
 # tests manual
 print(rectangle_1)
 print(rectangle_1.rectangle_areas())
 print(rectangle_1.rectangle_circumferences())
+print(rectangle_1.rectangle_center_point())
 print(rectangle_1.check_position(point_x, point_y))
 print(f"rectangle_1 == rectangle_2 : {rectangle_1 == rectangle_2}")
-print(rectangle_1.draw_rectangle())                                  # varför hålla koll på mittpunkt? Kokchun
-print(rectangle_1.move_rectangle(-5, -5))
+print(rectangle_1.draw_rectangle())
+print("New coordinates",rectangle_1.move_rectangle(-5, -5))
 print(rectangle_1)
 print(rectangle_1.check_position(point_x, point_y))
+print(rectangle_1.rectangle_center_point())
 print(rectangle_1.draw_rectangle())
+print("--------------")
+
+# tests manual
+"""
+print(rectangle_2)
+print(rectangle_2.rectangle_areas())
+print(rectangle_2.rectangle_circumferences())
+print(rectangle_2.rectangle_center_point())
+print(rectangle_2.check_position(point_x, point_y))
+print(f"rectangle_1 == rectangle_3 : {rectangle_1 == rectangle_3}")
+print(rectangle_2.draw_rectangle())                                  # varför hålla koll på mittpunkt? Kokchun
+print(rectangle_2.move_rectangle(-5, -5))
+print(rectangle_2)
+print(rectangle_2.check_position(point_x, point_y))
+print(rectangle_2.rectangle_center_point())
+print(rectangle_2.draw_rectangle())
+"""
