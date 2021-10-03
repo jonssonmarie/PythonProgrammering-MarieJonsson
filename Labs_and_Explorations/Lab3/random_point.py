@@ -4,7 +4,7 @@
 import random as rnd
 
 
-def random_coordinates():
+def random_point():
     point_x = rnd.randint(-10, 10)
     point_y = rnd.randint(-10, 10)
     point_z = rnd.randint(-10, 10)
