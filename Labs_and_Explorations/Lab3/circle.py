@@ -172,11 +172,11 @@ class Circle:
         ax.set_aspect("equal", "box")           # make scale equal
         plt.show()                              # Display all open figures.
 
-"""
+
 # objects
 circle_1 = Circle(5, 1, 1)
 circle_2 = Circle(6, 2, 3)
-
+"""
 # tests manual
 print(circle_1)
 print(circle_1.circle_areas())
