@@ -199,4 +199,4 @@ print(rectangle_1.check_position(point_x, point_y))
 print(rectangle_1.center_point())
 print(rectangle_1.draw_2d_geometry())
 print("--------------")
-""""
+"""
