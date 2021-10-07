@@ -1,4 +1,3 @@
-
 import unittest
 from circle import Circle
 from rectangle import Rectangle
@@ -8,7 +7,7 @@ from cube import Cube
 
 class Lab3Circle(unittest.TestCase):
     """
-    Unit testing for Lab 3
+    Unit testing for Lab 3 Circle
     """
     def setUp(self) -> None:
         self.radius_circle, self.x, self.y = 5, 1, 3
@@ -17,12 +16,12 @@ class Lab3Circle(unittest.TestCase):
         return Circle(self.radius_circle, self.x, self.y)
 
     # Test start here
-    def test_create_circle(self):
+    def test_create_circle(self) -> None:
         c1 = self.create_circle()
         c2 = Circle(5, 1, 3)
         self.assertEqual(c1, c2)  # expect arguments are equal
 
-    def test_create_empty_circle(self):
+    def test_create_empty_circle(self) -> None:
         with self.assertRaises(TypeError):  # We except an Exception (via self.assertRaises) unless we fail
             c = Circle()
 
@@ -41,10 +40,13 @@ class Lab3Circle(unittest.TestCase):
 
     def test_area(self) -> None:
         c1 = self.create_circle()
-        self.assertAlmostEqual(c1.circle_areas(), 78.539816339744830961566084581988)
+        self.assertAlmostEqual(c1.area(), 78.539816339744830961566084581988)
 
 
 class Lab3Sphere(unittest.TestCase):
+    """
+    Unit testing for Lab 3 Sphere
+    """
     def setUp(self) -> None:
         self.radius_circle, self.x, self.y, self.z = 3, 2, 4, 2
 
@@ -52,16 +54,16 @@ class Lab3Sphere(unittest.TestCase):
         return Sphere(self.radius_circle, self.x, self.y, self.z)
 
     # Test start here
-    def test_create_sphere(self):
+    def test_create_sphere(self) -> None:
         s1 = self.create_sphere()
         s2 = Sphere(3, 2, 4, 2)
         self.assertEqual(s1, s2)  # expect arguments are equal
 
-    def test_create_empty_sphere(self):
+    def test_create_empty_sphere(self) -> None:
         with self.assertRaises(TypeError):  # We except an Exception (via self.assertRaises) unless we fail
             s = Sphere()
 
-    def test_create_invalid_sphere(self):
+    def test_create_invalid_sphere(self) -> None:
         with self.assertRaises(TypeError):
             s = Sphere(5, 1, 2, "a")
 
@@ -79,10 +81,13 @@ class Lab3Sphere(unittest.TestCase):
 
     def test_area(self) -> None:
         s1 = self.create_sphere()
-        self.assertAlmostEqual(s1.sphere_areas(), 113.09733552923255658465516179806)
+        self.assertAlmostEqual(s1.area(), 113.09733552923255658465516179806)
 
 
 class Lab3Rectangle(unittest.TestCase):
+    """
+    Unit testing for Lab 3 Rectangle
+    """
     def setUp(self) -> None:
         self.side1, self.side2, self.x, self.y = 4, 3, 4, 6
 
@@ -90,16 +95,16 @@ class Lab3Rectangle(unittest.TestCase):
         return Rectangle(self.side1, self.side2, self.x, self.y)
 
     # Test start here
-    def test_create_rectangle(self):
+    def test_create_rectangle(self) -> None:
         r1 = self.create_rectangle()
         r2 = Rectangle(4, 3, 4, 6)
         self.assertEqual(r1, r2)  # expect arguments are equal
 
-    def test_create_empty_rectangle(self):
+    def test_create_empty_rectangle(self) -> None:
         with self.assertRaises(TypeError):  # We except an Exception (via self.assertRaises) unless we fail
             r = Rectangle()
 
-    def test_create_invalid_rectangle(self):
+    def test_create_invalid_rectangle(self) -> None:
         with self.assertRaises(TypeError):
             r = Rectangle(5, 4, 1, "a")
 
@@ -114,10 +119,13 @@ class Lab3Rectangle(unittest.TestCase):
 
     def test_area(self) -> None:
         r1 = self.create_rectangle()
-        self.assertAlmostEqual(r1.rectangle_areas(), 12.0)
+        self.assertAlmostEqual(r1.area(), 12.0)
 
 
 class Lab3Cube(unittest.TestCase):
+    """
+    Unit testing for Lab 3 Cube
+    """
     def setUp(self) -> None:
         self.side1, self.x, self.y, self.z = 4, 3, 4, 2
 
@@ -125,16 +133,16 @@ class Lab3Cube(unittest.TestCase):
         return Cube(self.side1, self.x, self.y, self.z)
 
     # Test start here
-    def test_create_cube(self):
+    def test_create_cube(self) -> None:
         c1 = self.create_cube()
         c2 = Cube(4, 3, 4, 2)
         self.assertEqual(c1, c2)  # expect arguments are equal
 
-    def test_create_empty_cube(self):
+    def test_create_empty_cube(self) -> None:
         with self.assertRaises(TypeError):  # We except an Exception (via self.assertRaises) unless we fail
             c = Cube()
 
-    def test_create_invalid_cube(self):
+    def test_create_invalid_cube(self) -> None:
         with self.assertRaises(TypeError):
             c = Cube(5, 4, 1, "a")
 
@@ -149,11 +157,11 @@ class Lab3Cube(unittest.TestCase):
 
     def test_cube_volume(self) -> None:
         c1 = self.create_cube()
-        self.assertAlmostEqual(c1.cube_volume(), 64)
+        self.assertAlmostEqual(c1.volume(), 64)
 
     def test_cube_circumradius(self) -> None:
         c1 = self.create_cube()
-        self.assertAlmostEqual(c1.cube_circumradius(), 3.4641016151377545870548926830117)
+        self.assertAlmostEqual(c1.circumradius(), 3.4641016151377545870548926830117)
 
 
 # if we run this module directly as main, run the code in the conditional
