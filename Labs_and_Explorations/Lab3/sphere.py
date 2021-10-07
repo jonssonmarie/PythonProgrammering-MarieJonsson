@@ -25,19 +25,19 @@ class Sphere(Circle):
 
            Methods
            -------
-           sphere_areas - > float:
+           area - > float:
                calculate and return the sphere surface area
 
-           sphere_circumferences - > float
+           circumferences - > float
                inherits the circle circumference method
 
-           sphere_center_point -> floats
+           center_point -> floats
                calculate and return the cube center point x,y, z
 
-           sphere_volume -> float
+           volume -> float
                 calculate and return the sphere volume
 
-           move_sphere -> x, y, z (floats)
+           move_3d_geometry -> x, y, z (floats)
                set the new coordinates to move the sphere
 
            check_position -> Bool
@@ -47,7 +47,7 @@ class Sphere(Circle):
            __repr__:
                return data (side1, x, y, z) for the sphere
 
-           draw_sphere
+           draw_3d_geometry - > Figure
                plots the sphere and the random point
            """
     def __init__(self, radius_circle, x, y, z):
@@ -60,24 +60,24 @@ class Sphere(Circle):
 
     def sphere_areas(self):
         """
-        :formula:  4 * pi * r^2
+        formula:  4 * pi * r^2
         :return: sphere area """
-        sphere_area = Circle.circle_areas(self) * 4
+        sphere_area = Circle.area(self) * 4
         return sphere_area
 
-    def sphere_circumference(self):
-        """
-        :return: inherit circle_circumference
-        """
-        return super().circle_circumferences()
+    #def sphere_circumference(self):
+        #"""
+        #:return: inherit circle_circumference
+        #"""
+        #return super().circumferences()
 
-    def sphere_center_point(self):
+    def center_point(self):
         """
         :return: sphere center point x,y,z
         """
         return self.x, self.y, self.z
 
-    def sphere_volume(self):
+    def volume(self):
         """
         :formula: 4/3 * pi * r^3
         :return: volume
@@ -85,7 +85,7 @@ class Sphere(Circle):
         volume = 4/3 * math.pi * math.pow(self.radius_circle, 3)
         return volume
 
-    def move_sphere(self, move_x, move_y, move_z):
+    def move_3d_geometry(self, move_x, move_y, move_z):
         """set the new coordinates to move the sphere
         :param move_x: update self.x
         :param move_y: update self.y
@@ -96,7 +96,7 @@ class Sphere(Circle):
         self.y = move_y
         self.z = move_z
 
-    def check_pos_sphere(self, point_x, point_y, point_z):
+    def check_pos(self, point_x, point_y, point_z):
         """
         check if the point is within (True) or outside (False) the sphere, the boundary is included
 
@@ -131,7 +131,7 @@ class Sphere(Circle):
     def __repr__(self):
         return f"Sphere (radius = {self.radius_circle}, x = {self.x}, y = {self.y}, z = {self.z})"
 
-    def draw_sphere(self):
+    def draw_3d_geometry(self):
         """
         :return: plot the sphere
         """
@@ -173,14 +173,14 @@ sphere_2 = Sphere(5, 2, 1, 2)
 """
 # tests manual
 print(sphere_1)
-print(sphere_1.sphere_areas())
-print(sphere_1.sphere_circumference())
-print(sphere_1.sphere_center_point())
-print(sphere_1.sphere_volume())
-print(sphere_1.check_pos_sphere(point_x, point_y, point_z))
-print(sphere_1.draw_sphere())
-print(sphere_1.move_sphere(5, 5, 5))
-print(sphere_1.sphere_center_point())
-print(sphere_1.draw_sphere())
-print(sphere_1.check_pos_sphere(point_x, point_y, point_z))
+print(sphere_1.area())
+print(sphere_1.circumference())
+print(sphere_1.center_point())
+print(sphere_1.volume())
+print(sphere_1.check_pos(point_x, point_y, point_z))
+print(sphere_1.draw_3d_geometry())
+print(sphere_1.move_3d_geometry(5, 5, 5))
+print(sphere_1.center_point())
+print(sphere_1.draw_3d_geometry())
+print(sphere_1.check_pos(point_x, point_y, point_z))
 """
