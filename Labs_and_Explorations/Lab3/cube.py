@@ -25,23 +25,23 @@ class Cube(Rectangle):
 
            Methods
            -------
-           cube_areas - > float:
+           area - > float:
                calculate and return the cube surface area
 
-           cube_circumferences - > float
+           circumferences - > float
                inherits the rectangle circumference method
 
-           cube_circumradius(self):
+           circumradius(self):
                 The radius of sphere circumscribed around a cube is called the circumradius.
                 calculate and return the cube circumradius
 
-           cube_center_point -> floats
+           center_point -> floats
                calculate and return the cube center point x,y, z
 
-           cube_volume -> float
+           volume -> float
                 calculate and return the cube volume
 
-           move_cube -> x, y, z (floats)
+           move_3d_geometry -> x, y, z (floats)
                set the new coordinates to move the rectangle
 
            check_position -> Bool
@@ -54,7 +54,7 @@ class Cube(Rectangle):
            __eq__ -> bool
                equality for side1, return True if equal, else False
 
-           draw_cube
+           draw_3d_geometry - > Figure
                plots the cube and the random point
        """
 
@@ -66,7 +66,7 @@ class Cube(Rectangle):
         Rectangle.validate_length(side1)
         Rectangle.validate_real_numbers(x, y, z)
 
-    def cube_areas(self):
+    def area(self):
         """
         :formula:  6 * a^2
         :return: cube surface area
@@ -74,13 +74,13 @@ class Cube(Rectangle):
         cube_area = self.side1 * self.side1 * 6
         return cube_area
 
-    def cube_circumferences(self):
-        """
-        :return: inherit rectangle circumference
-        """
-        return super().rectangle_circumferences()
+    #def cube_circumferences(self):
+        #"""
+        #:return: inherit rectangle circumference
+        #"""
+        #return super().rectangle_circumferences()"""
 
-    def cube_circumradius(self):
+    def circumradius(self):
         """
         The radius of sphere circumscribed around a cube is called the circumradius.
         :formula: side * sqrt(3) / 2
@@ -89,7 +89,7 @@ class Cube(Rectangle):
         circumradius = self.side1 * math.sqrt(3) / 2
         return circumradius
 
-    def cube_center_point(self):
+    def center_point(self):
         """
         calculate cube center point x, y, z
         :return: cube_center_x, cube_center_y, cube_center_z
@@ -99,7 +99,7 @@ class Cube(Rectangle):
         cube_center_z = self.z + (self.side1/2)
         return cube_center_x, cube_center_y, cube_center_z
 
-    def cube_volume(self):
+    def volume(self):
         """
         calculate cube volume
         :return: volume
@@ -107,7 +107,7 @@ class Cube(Rectangle):
         volume = math.pow(self.side1, 3)
         return volume
 
-    def move_cube(self, move_x, move_y, move_z):
+    def move_3d_geometry(self, move_x, move_y, move_z):
         """
         set the new coordinates to move the cube
         :param move_x: update self.x
@@ -119,7 +119,7 @@ class Cube(Rectangle):
         self.y = move_y
         self.z = move_z
 
-    def check_pos_cube(self, point_x, point_y, point_z):
+    def check_pos(self, point_x, point_y, point_z):
         """
         check if the point is within (True) or outside (False) the cube, the boundary is included
 
@@ -154,7 +154,7 @@ class Cube(Rectangle):
     def __repr__(self):
         return f"Cube (side1 = {self.side1}, side1 = {self.side1} x = {self.x}, y = {self.y}, z = {self.z})"
 
-    def draw_cube(self):
+    def draw_3d_geometry(self):
         """
         :link:  https://stackoverflow.com/questions/33540109/plot-surfaces-on-a-cube/33542678
         :changed: added dx, dy, dz for setting position
@@ -163,13 +163,14 @@ class Cube(Rectangle):
         """
 
         def get_cube():
-            phi = np.arange(1, 10, 2) * np.pi / 4     # tar lite punkter för phi vinkeln
+            phi = np.arange(1, 10, 2) * np.pi / 4     # to get a few points for phi, pi/4 gives 45 deg angle
             phi2, theta = np.meshgrid(phi, phi)
-            # Return coordinate matrices from coordinate vectors, in this case phi, phi and set as phi2, theta.
-
-            x_cube = np.cos(phi2) * np.sin(theta)
-            y_cube = np.sin(phi2) * np.sin(theta)
-            z_cube = np.cos(theta) / np.sqrt(2)
+            # Return coordinate matrices from coordinate vectors, in this case phi, phi and saved to phi2, theta.
+            # spherical coordinates phi = arccos(z/r)  theta = arctan(y/x)
+            x_cube = np.cos(phi2) * np.sin(theta)  # spherical coord x = r * sin(phi) * cos(theta), r = 1
+            y_cube = np.sin(phi2) * np.sin(theta)  # spherical coord y = r * sin(phi) * sin (theta), r = 1
+            z_cube = np.cos(theta) / np.sqrt(2)    # spherical coord z = r * cos(phi), r = 1
+                                                   # sqrt(2) from cos(45 deg) = 1/sqrt(2)
             return x_cube, y_cube, z_cube
 
         dx, dy, dz = self.x, self.y, self.z
@@ -183,7 +184,7 @@ class Cube(Rectangle):
         c = self.side1
         x, y, z = get_cube()
 
-        ax.plot_surface(x * a + dx, y * b + dy, z * c + dz, alpha=0.25)
+        ax.plot_surface(x * a + dx, y * b + dy, c * z + dz, alpha=0.25)
         plt.plot(point_x, point_y, point_z, "ko")  # plot of coordinate for check_position()
 
         ax.set_xlim(-15, 15)
@@ -195,18 +196,17 @@ class Cube(Rectangle):
 # objects
 cube_1 = Cube(5, 0, 0, 0)
 cube_2 = Cube(4, 1, 1, 1)
-
 """
 # tests manual
 print(cube_1)
-print(cube_1.check_pos_cube(point_x, point_y, point_z))
-print(cube_1.rectangle_areas())
-print(cube_1.cube_circumferences())
-print(cube_1.cube_circumradius())
-print(cube_1.cube_center_point())
-print(cube_1.cube_volume())
-print(cube_1.draw_cube())
-print(cube_1.move_cube(6, 6, 6))
-print(cube_1.draw_cube())
-print(cube_1.check_pos_cube(point_x, point_y, point_z))
+print(cube_1.check_pos(point_x, point_y, point_z))
+print(cube_1.area())
+print(cube_1.circumferences())
+print(cube_1.circumradius())
+print(cube_1.center_point())
+print(cube_1.volume())
+print(cube_1.draw_3d_geometry())
+print(cube_1.move_3d_geometry(6, 6, 6))
+print(cube_1.draw_3d_geometry())
+print(cube_1.check_pos(point_x, point_y, point_z))
 """
