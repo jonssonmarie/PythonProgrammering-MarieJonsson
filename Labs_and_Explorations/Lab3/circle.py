@@ -20,16 +20,16 @@ class Circle:
 
             Methods
             -------
-            circle_areas - > float:
+            area - > float:
                 calculates and return the circle area
 
-            circle_circumferences - > float
+            circumferences - > float
                 calculates the and return circle circumference
 
-            circle_center_point -> floats
+            center_point -> floats
                 calculate and return the circle center point x,y
 
-            move_circle -> x, y (float)
+            move_geometry -> x, y (float)
                 set the new coordinates to move the circle
 
             check_position -> Bool
@@ -50,7 +50,7 @@ class Circle:
             __eq__ ->
                 equality for radius_circle, return True if equal, else False
 
-            draw_circle
+            draw_geometry - > Figure
                 plots the circle and the random point
         """
 
@@ -69,7 +69,7 @@ class Circle:
         Circle.validate_length(radius_circle)
         Circle.validate_real_numbers(radius_circle, x, y)
 
-    def circle_areas(self):
+    def area(self):
         """
         :formula: pi * r^2
         :return: circle area
@@ -77,7 +77,7 @@ class Circle:
         circle_area = math.pi * math.pow(self.radius_circle, 2)
         return circle_area
 
-    def circle_circumferences(self):
+    def circumference(self):
         """
         :formula: pi * 2 * r
         :return: circle circumference
@@ -85,14 +85,14 @@ class Circle:
         circle_circumference = 2 * math.pi * self.radius_circle
         return circle_circumference
 
-    def circle_center_point(self):
+    def center_point(self):
         """
         circle center point x, y
         :return: self.x, self.y,
         """
         return self.x, self.y
 
-    def move_circle(self, move_x, move_y):
+    def move_geometry(self, move_x, move_y):
         """ set the new coordinates to move the circle
         :param move_x: update self.x
         :param move_y: update self.y
@@ -157,7 +157,7 @@ class Circle:
     def __repr__(self):
         return f"Circle (radius = {self.radius_circle}, x = {self.x}, y = {self.y})"
 
-    def draw_circle(self):
+    def draw_geometry(self):
         """
         :return: plot the circle
         """
@@ -176,17 +176,18 @@ class Circle:
 # objects
 circle_1 = Circle(5, 1, 1)
 circle_2 = Circle(6, 2, 3)
+
 """
 # tests manual
 print(circle_1)
-print(circle_1.circle_areas())
-print(circle_1.circle_circumferences())
-print(circle_1.circle_center_point())
+print(circle_1.area())
+print(circle_1.circumference())
+print(circle_1.center_point())
 print(circle_1.check_position(point_x, point_y))
 print(f"circle_1 == circle_2 : {circle_1 == circle_2}")
-print(circle_1.draw_circle())
-print(circle_1.move_circle(5,5))
-print(circle_1.circle_center_point())
-print(circle_1.draw_circle())
+print(circle_1.draw_geometry())
+print(circle_1.move_geometry(5,5))
+print(circle_1.center_point())
+print(circle_1.draw_geometry())
 print(circle_1.check_position(point_x, point_y))
 """
