@@ -21,16 +21,16 @@ class Rectangle:
 
             Methods
             -------
-            rectangle_areas - > float:
+            area - > float:
                 calculates the rectangle area
 
-            rectangle_circumferences - > float
+            circumferences - > float
                 calculates the rectangle circumference
 
-            rectangle_center_point -> floats
+            center_point -> floats
                 calculate the rectangle center point x,y
 
-            move_rectangle -> x, y (float)
+            move_geometry -> x, y (float)
                 set the new coordinates to move the rectangle
 
             check_position -> Bool
@@ -50,7 +50,7 @@ class Rectangle:
             __eq__ - > bool
                  equality for side1, side2, return True if equal, else False
 
-            draw_rectangle -> None
+            draw_2d_geometry -> Figure
                 plots the rectangle and the random point
     """
 
@@ -64,7 +64,7 @@ class Rectangle:
         Rectangle.validate_length(side1, side2)
         Rectangle.validate_real_numbers(x, y)
 
-    def rectangle_areas(self):
+    def area(self):
         """
         calculate rectangle area
         :formula: side * side
@@ -73,7 +73,7 @@ class Rectangle:
         rectangle_area = self.side1 * self.side2
         return rectangle_area
 
-    def rectangle_circumferences(self):
+    def circumferences(self):
         """
         calculate rectangle circumference
         :return: rectangle_circumference
@@ -81,7 +81,7 @@ class Rectangle:
         rectangle_circumference = self.side1 * 2 + self.side2 * 2
         return rectangle_circumference
 
-    def rectangle_center_point(self):
+    def center_point(self):
         """
         rectangle center point x, y
         :return: rectangle_center_x, rectangle_center_y
@@ -90,7 +90,7 @@ class Rectangle:
         rectangle_center_y = self.y + (self.side2/2)
         return rectangle_center_x, rectangle_center_y
 
-    def move_rectangle(self, move_x, move_y):
+    def move_geometry(self, move_x, move_y):
         """
         set the new coordinates to move the rectangle
         :param move_x: update self.x
@@ -159,7 +159,7 @@ class Rectangle:
     def __repr__(self):
         return f"Rectangle (side1 = {self.side1}, side2 = {self.side2} x = {self.x}, y = {self.y})"
 
-    def draw_rectangle(self):
+    def draw_2d_geometry(self):
         """
         :return: plot the rectangle
         """
@@ -187,31 +187,16 @@ rectangle_3 = Rectangle(4, 1, -2, -3)
 """
 # tests manual
 print(rectangle_1)
-print(rectangle_1.rectangle_areas())
-print(rectangle_1.rectangle_circumferences())
-print(rectangle_1.rectangle_center_point())
+print(rectangle_1.area())
+print(rectangle_1.circumferences())
+print(rectangle_1.center_point())
 print(rectangle_1.check_position(point_x, point_y))
 print(f"rectangle_1 == rectangle_2 : {rectangle_1 == rectangle_2}")
-print(rectangle_1.draw_rectangle())
-print(rectangle_1.move_rectangle(-5, -5))
+print(rectangle_1.draw_2d_geometry())
+print(rectangle_1.move_geometry(-5, -5))
 print(rectangle_1)
 print(rectangle_1.check_position(point_x, point_y))
-print(rectangle_1.rectangle_center_point())
-print(rectangle_1.draw_rectangle())
+print(rectangle_1.center_point())
+print(rectangle_1.draw_2d_geometry())
 print("--------------")
-"""
-# tests manual
-"""
-print(rectangle_2)
-print(rectangle_2.rectangle_areas())
-print(rectangle_2.rectangle_circumferences())
-print(rectangle_2.rectangle_center_point())
-print(rectangle_2.check_position(point_x, point_y))
-print(f"rectangle_1 == rectangle_3 : {rectangle_1 == rectangle_3}")
-print(rectangle_2.draw_rectangle())                                  
-print(rectangle_2.move_rectangle(-5, -5))
-print(rectangle_2)
-print(rectangle_2.check_position(point_x, point_y))
-print(rectangle_2.rectangle_center_point())
-print(rectangle_2.draw_rectangle())
-"""
+""""
